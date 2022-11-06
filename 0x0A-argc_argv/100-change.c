@@ -2,43 +2,47 @@
 #include <stdlib.h>
 
 /**
- * main - entry point function
- * @argc: number of arguments
- * @argv: array containing arguments
- *
- * Return: 0
+ * main - function
+ * @argc: length of argv
+ * @argv: number of argument
+ * Return: Always 0
  */
+
 int main(int argc, char *argv[])
 {
-int cash, coins;
+	/*Declaring variables*/
+	int position, total, change, aux;
+	int coins[] = {25, 10, 5, 2, 1}; /*Array int*/
 
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
 
-if (argc != 2)
-{
-printf("Error\n");
-return (1);
-}
-cash = atoi(argv[1]);
-if (cash <= 0)
-{
-printf("0\n");
-return (0);
-}
-for (coins = 0; cash > 0; coins++)
-{
+	total = atoi(argv[1]); /*Covert str to int*/
 
-(cash >= 25)
-cash -= 25;
-else if (cash >= 10)
-cash -= 10;
-else if (cash >= 5)
-cash -= 5;
-else if (cash >= 2)
-cash -= 2;
-else
-cash -= 1;
-}
+	if (total <= 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+	/*Declaring While*/
 
-printf("%d\n", coins);
-return (0);
+	while (coins[position] != '\0')
+
+	{
+		if (total >= coins[position])
+		{
+			aux = (total / coins[position]);
+			change += aux;
+			total -= coins[position] * aux;
+		}
+
+		position++;
+
+	}
+
+	printf("%d\n", change);
+	return (0);
 }
