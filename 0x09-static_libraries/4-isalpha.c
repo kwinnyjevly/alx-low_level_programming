@@ -1,20 +1,22 @@
 #include "main.h"
 
 /**
- * _strlen - Function for counting the length of string
- * @s: a pointer for counting the string length
+ * _isalpha - Shows 1 if the input is a
+ * letter Another cases, shows 0
  *
- *Return: int i
+ * @c: The character in ASCII code
+ *
+ * Return: 1 for letters. 0 for the rest.
  */
-
-int _strlen(char *s)
+int _isalpha(int c)
 {
-	int i = 0;
-
-	while (s[i] != '\0')
+	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
 	{
-		i++;
+		return (1);
 	}
-
-	return (i);
+	else
+	{
+		return (0);
+	}
+	_putchar('\n');
 }
